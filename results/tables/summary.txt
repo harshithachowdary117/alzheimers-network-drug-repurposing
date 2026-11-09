@@ -1,0 +1,84 @@
+=== STABILITY ACROSS STRING THRESHOLDS ===
+[native] drugs analysable at all thresholds: 722; of these 56 are direct hits
+[common] drugs analysable at all thresholds: 722; of these 56 are direct hits
+
+variant          view  threshold_a  threshold_b  n_drugs  spearman_rho  top10_overlap  top20_overlap  top50_overlap
+ native     all_drugs          400          700      722         0.508              7             10             47
+ native     all_drugs          400          900      722         0.416              7             14             47
+ native     all_drugs          700          900      722         0.623              8             12             49
+ native no_direct_hit          400          700      666         0.378              1              1              7
+ native no_direct_hit          400          900      666         0.261              1              3              3
+ native no_direct_hit          700          900      666         0.524              2              6             26
+ common     all_drugs          400          700      722         0.454              7             13             47
+ common     all_drugs          400          900      722         0.356              8             14             46
+ common     all_drugs          700          900      722         0.607              8             15             48
+ common no_direct_hit          400          700      666         0.310              1              3              8
+ common no_direct_hit          400          900      666         0.185              2              2              4
+ common no_direct_hit          700          900      666         0.504              2              5             26
+
+=== DRUGS CLOSER THAN CHANCE ===
+variant  threshold  drugs_analysed  q_below_0.05  p_below_0.05  expected_by_chance  direct_hits
+ native        400             993             1            39                49.7           63
+ native        700             897             1            44                44.9           62
+ native        900             722             1            33                36.1           56
+ common        400             993             1            43                49.7           56
+ common        700             897             1            42                44.9           56
+ common        900             722             1            32                36.1           56
+
+=== CANDIDATE CLASSES (native, 722 drugs) ===
+candidate_class
+none                  636
+direct_hit             56
+recurrent_indirect     27
+robust_indirect         3
+
+Direct hits by BBB evidence: {'no_evidence': 28, 'BBB-': 19, 'BBB+': 5, 'conflicting': 4}
+Indirect candidates (robust + recurrent) by BBB evidence: {'no_evidence': 20, 'BBB+': 4, 'conflicting': 4, 'BBB-': 2}
+
+Direct-hit drugs, best 15 (target is itself an Alzheimer's gene):
+                  drug_name  n_targets_in_network    bbb_label  mean_rank
+drug_id                                                                  
+CHEMBL3353410   OSIMERTINIB                     1  no_evidence   2.333333
+CHEMBL553         ERLOTINIB                     1         BBB+   2.333333
+CHEMBL4558324    LAZERTINIB                     1  no_evidence   4.000000
+CHEMBL939         GEFITINIB                     1         BBB+   4.666667
+CHEMBL3786343     OLMUTINIB                     1  no_evidence   4.666667
+CHEMBL4650319  MOBOCERTINIB                     1  no_evidence   5.000000
+CHEMBL1770916  NIROGACESTAT                     6  no_evidence   5.000000
+CHEMBL576982    QUIZARTINIB                     6  no_evidence  13.333333
+CHEMBL184412    DRONEDARONE                     2         BBB-  13.666667
+CHEMBL578         ENALAPRIL                     1         BBB-  16.666667
+CHEMBL535         SUNITINIB                     9         BBB+  16.666667
+CHEMBL471737     IVABRADINE                     1  no_evidence  17.333333
+CHEMBL317094      IMIDAPRIL                     1         BBB-  18.666667
+CHEMBL1237       LISINOPRIL                     1  no_evidence  19.333333
+CHEMBL577       ENALAPRILAT                     1  no_evidence  20.000000
+
+Indirect candidates (top 50 among non-direct drugs at >=2 thresholds):
+                                  drug_name  n_targets_in_network  n_thresholds_top50_indirect    bbb_label  mean_rank_indirect
+drug_id                                                                                                                        
+CHEMBL1580                      PENTOSTATIN                     1                            3         BBB+            3.333333
+CHEMBL1433                      DOXYCYCLINE                     2                            3  no_evidence           12.666667
+CHEMBL354541                     LOMITAPIDE                     2                            3  no_evidence           19.000000
+CHEMBL4303525                 OMAVELOXOLONE                     1                            2  no_evidence           33.333333
+CHEMBL502835                     NINTEDANIB                     2                            2  no_evidence           34.666667
+CHEMBL3707395                   ELAFIBRANOR                     2                            2  no_evidence           35.333333
+CHEMBL54349                         ALPIDEM                     1                            2         BBB+           36.666667
+CHEMBL608533                    MIDOSTAURIN                     5                            2  no_evidence           41.000000
+CHEMBL1544                     LIOTHYRONINE                     2                            2         BBB-           56.666667
+CHEMBL2048028                   LIFITEGRAST                     2                            2  no_evidence           59.000000
+CHEMBL230158                     SELADELPAR                     1                            2  no_evidence           59.666667
+CHEMBL1389                   LEVONORGESTREL                     1                            2  conflicting           60.333333
+CHEMBL1533                      DESOGESTREL                     1                            2  conflicting           61.000000
+CHEMBL2107797                    NORGESTREL                     1                            2  conflicting           63.000000
+CHEMBL1200934                  NORGESTIMATE                     1                            2  conflicting           63.333333
+CHEMBL1200848  HYDROXYPROGESTERONE CAPROATE                     1                            2  no_evidence           66.333333
+CHEMBL3643413                    LENIOLISIB                     1                            2  no_evidence           67.000000
+CHEMBL3218576                    COPANLISIB                     2                            2  no_evidence           68.333333
+CHEMBL2216870                    IDELALISIB                     1                            2  no_evidence           69.000000
+CHEMBL3039502                     DUVELISIB                     2                            2  no_evidence           69.666667
+CHEMBL3301610                   ABEMACICLIB                     2                            2  no_evidence           95.000000
+CHEMBL81                         RALOXIFENE                     2                            2         BBB-           96.666667
+CHEMBL3545110                    RIBOCICLIB                     2                            2  no_evidence          101.000000
+CHEMBL3894860                   TRILACICLIB                     2                            2  no_evidence          109.000000
+CHEMBL1521                         ZALEPLON                     3                            2         BBB+          112.000000

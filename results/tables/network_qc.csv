@@ -1,0 +1,4 @@
+threshold,nodes_all,edges_all,lcc_nodes,lcc_edges,lcc_density,ad_genes_total,ad_genes_in_lcc,ad_coverage,ad_module_lcc_size,ad_module_z,ad_module_p,target_genes_total,target_genes_in_lcc,target_coverage,drugs_total,drugs_with_target_in_lcc
+400,15809,210667,15640,210570,0.00172,573,483,0.843,174,2.47,0.0,452,443,0.98,1010,993
+700,10746,86519,9830,85576,0.00177,573,328,0.572,53,5.06,0.002,452,378,0.836,1010,897
+900,8706,44931,7167,43180,0.00168,573,252,0.44,17,4.02,0.01,452,313,0.692,1010,722

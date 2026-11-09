@@ -1,0 +1,7 @@
+variant,threshold,drugs_analysed,q_below_0.05,p_below_0.05,expected_by_chance,direct_hits
+native,400,993,1,39,49.7,63
+native,700,897,1,44,44.9,62
+native,900,722,1,33,36.1,56
+common,400,993,1,43,49.7,56
+common,700,897,1,42,44.9,56
+common,900,722,1,32,36.1,56
